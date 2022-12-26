@@ -115,7 +115,7 @@ void BoierMur() {
 					i += dict[key[size - 1]];
 				}
 			}
-		else if (i < text.size() - size)
+		else 
 			for (int k = size - 2; k >= 0; k--) {
 				if (key[k] == text[i]) {
 					i += dict[key[k]];
@@ -123,20 +123,6 @@ void BoierMur() {
 				}
 				else if (k == 0)
 					i += dict['*'];
-			}
-		else
-			break;
-	}
-	if (i < text.size() - 1) {
-		i = text.size() - 1;
-		if (text[i] == key[size - 1])
-			for (int j = i - 1, k = size - 2; j > i - size; j--, k--) {
-				if (key[k] != text[j]) {
-					break;
-				}
-				else if (j == 1 + i - size) {
-					count++;
-				}
 			}
 	}
 	cout << "Кол-во совпадений: " << count << "\n";
